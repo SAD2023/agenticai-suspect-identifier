@@ -1,0 +1,25 @@
+# requirements.txt — Python dependencies for the Suspect Prioritization System
+#
+# Install everything with:
+#   pip install -r requirements.txt
+#
+# CORE (required for all functionality):
+scikit-learn>=1.3.0       # Random Forest classifier, preprocessing pipeline, metrics
+pandas>=2.0.0             # DataFrame handling for all data I/O
+numpy>=1.24.0             # Numerical operations
+joblib>=1.3.0             # Model serialization (saving/loading the trained pipeline)
+openpyxl>=3.1.0           # Excel (.xlsx) read/write — input files and output reports
+pdfplumber>=0.10.0        # PDF table extraction for PDF analyst input files
+
+# OUTPUT (required for PDF report generation):
+fpdf2>=2.7.0              # PDF report generation
+                          # If not installed, the system falls back to a .txt report.
+
+# OPTIONAL — enhanced explainability (recommended for legal/formal use):
+# shap>=0.43.0            # SHAP-based per-prediction explanations (see predictor.py TODO)
+                          # Uncomment and install if rigorous attribution is required.
+
+# OPTIONAL — development and testing:
+# pytest>=7.4.0           # Unit testing
+# pytest-cov>=4.1.0       # Test coverage reporting
+# black>=23.0.0           # Code formatting
